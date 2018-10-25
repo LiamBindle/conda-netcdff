@@ -1,6 +1,6 @@
 {% set version = "4.4.4" %}
 package:
-  name: netcdff
+  name: netcdff-ng
   version: {{ version }}
 
 source:
@@ -8,10 +8,13 @@ source:
  
 requirements:
   build:
-    - gcc
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
     - make
-    - libnetcdf
+    - libnetcdf                   # ng
     - hdf5
   run:
-    - libnetcdf
+    - libnetcdf                   # ng
     - hdf5
+
